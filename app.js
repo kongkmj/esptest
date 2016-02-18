@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 // connect database
-mongoose.connect(process.env.MONGO_DB2);
+mongoose.connect("mongodb://kongtech:kongtech892@ds011218.mongolab.com:11218/esp8266");
 var db = mongoose.connection;
 db.once("open",function () {
   console.log("DB connected!");
@@ -68,6 +68,6 @@ app.delete('/posts/:id', function(req,res){
 }); //destroy
 */
 // start server
-app.listen(3000, function(){
+app.listen(80, function(){
   console.log('Server On!');
 });
