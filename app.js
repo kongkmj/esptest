@@ -27,7 +27,7 @@ app.set("view engine", 'ejs');
 // set middlewares
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({exteded:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 
 // set routes
 app.get('/posts', function(req,res){
@@ -39,7 +39,7 @@ app.get('/posts', function(req,res){
 app.post('/posts', function(req,res){
   Post.create(req.body.post,function (err,post) {
     if(err) return res.json({success:false, message:err});
-    res.json({success:true, data:post});
+    res.json({success:true, data:posts});
   });
 }); // create
 /*
